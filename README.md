@@ -12,6 +12,7 @@ socks -d -i0.0.0.0 -e$extip -p1080
 
 ## 依赖
 * Requests
+
   2.10.0 新版功能
 
   除了基本的 HTTP 代理，Request 还支持 SOCKS 协议的代理。这是一个可选功能，若要使用， 你需要安装第三方库。
