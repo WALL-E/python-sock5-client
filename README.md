@@ -3,8 +3,9 @@
 ## sock5服务器
 安装3proxy作为sock5的服务端
 
-```
+```shell
 yum install -y 3proxy
+
 extip=`ip route get 8.8.8.8|cut -d" " -f8`
 socks -d -i0.0.0.0 -e$extip -p1080
 ```
