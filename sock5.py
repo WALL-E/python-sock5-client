@@ -4,6 +4,7 @@ import os
 import sys
 import requests
 
+TIMEOUT = 5
 
 def main():
     if len(sys.argv) < 3:
@@ -22,8 +23,13 @@ def main():
     except IndexError:
         url = "http://httpbin.org/ip"
 
-    response = requests.get(url, proxies=proxies)
-    print "%s" % (response.text)
+    try:
+        response = requests.get(url, proxies=proxies, timeout=TIMEOUT)
+        print "%s" % (response.text)
+        sys.exit(0)
+    except Exception, msg:
+        print msg
+        sys.exit(1)
 
 
 if __name__ == '__main__':
